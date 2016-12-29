@@ -185,6 +185,7 @@ a, a:visited, a:focus, a:hover {
 @media (min-width: 1000px) {
     .image {
         display: none;
+        background-image: none;
     }
 
     .page {
