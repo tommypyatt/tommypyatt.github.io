@@ -112,19 +112,17 @@ a, a:visited, a:focus, a:hover {
 
 .alpha,
 .beta {
-    color: #fff;
-    text-align: center;
     font-weight: bold;
+    color: #000;
+    text-align: left;
 }
 
 .alpha {
     font-size: 2em;
-    margin: 0 0 0;
 }
 
 .beta {
     font-size: 1em;
-    margin: 0 10% 1em;
 }
 
 .image {
@@ -140,6 +138,21 @@ a, a:visited, a:focus, a:hover {
     bottom: 0;
     left: 0;
     width: 100%;
+}
+
+.image .alpha,
+.image .beta {
+    color: #fff;
+    text-align: center;
+    margin: 0 0 1em;
+}
+
+.image .alpha {
+    margin: 0 0 0;
+}
+
+.image .beta {
+    margin: 0 10% 1em;
 }
 
 .content .headline {
