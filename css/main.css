@@ -182,7 +182,7 @@ a, a:visited, a:focus, a:hover {
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1000px) {
     .image {
         display: none;
     }
@@ -198,7 +198,7 @@ a, a:visited, a:focus, a:hover {
 
     .content {
         float: right;
-        width: 40%;
+        width: 50%;
         padding: 30px;
     }
 
