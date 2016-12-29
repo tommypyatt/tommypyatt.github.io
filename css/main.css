@@ -203,6 +203,10 @@ a, a:visited, a:focus, a:hover {
         padding: 30px;
     }
 
+    .content-inner {
+        padding: 26px 30px;
+    }
+
     .content .headline {
         display: block;
     }
