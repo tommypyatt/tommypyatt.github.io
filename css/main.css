@@ -162,6 +162,18 @@ a, a:visited, a:focus, a:hover {
 .content-inner {
     padding: 20px;
     background: #fff;
+    position: relative;
+    right: -120%;
+    opacity: 0;
+    transition-property: right, opacity;
+    transition-duration: 400ms;
+    transition-timing-function: linear;
+    transition-delay: 800ms;
+}
+
+.loaded .content-inner {
+    opacity: 1;
+    right: 0;
 }
 
 .social-list {
@@ -218,6 +230,7 @@ a, a:visited, a:focus, a:hover {
 
     .content-inner {
         padding: 26px 30px;
+        border-radius: 4px;
     }
 
     .content .headline {
