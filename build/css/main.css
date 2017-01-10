@@ -110,6 +110,8 @@ a, a:visited, a:focus, a:hover {
     color: #666;
 }
 
+h1,
+h2,
 .alpha,
 .beta {
     font-weight: bold;
@@ -117,10 +119,12 @@ a, a:visited, a:focus, a:hover {
     text-align: left;
 }
 
+h1,
 .alpha {
     font-size: 2em;
 }
 
+h2,
 .beta {
     font-size: 1em;
 }
@@ -176,12 +180,12 @@ a, a:visited, a:focus, a:hover {
     right: 0;
 }
 
-.social-list {
+.social ul {
     padding: 0 0 20px;
     margin: 0;
 }
 
-.social-item {
+.social li {
     display: inline-block;
     margin-right: 10px;
 }
@@ -237,6 +241,8 @@ a, a:visited, a:focus, a:hover {
         display: block;
     }
 
+    h1,
+    h2,
     .alpha,
     .beta {
         color: #000;

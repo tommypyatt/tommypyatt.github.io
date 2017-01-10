@@ -1,0 +1,14 @@
+{
+    "locals": {
+        "url": "http://tommy.pyatt.me",
+        "name": "Tommy Pyatt",
+        "subtitle": "Web developer in Manchester, UK"
+    },
+        "jade": {
+        "pretty": true
+    },
+        "markdown": {
+        "smartLists": true,
+        "smartypants": true
+    }
+}

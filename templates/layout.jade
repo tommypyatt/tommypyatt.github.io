@@ -1,0 +1,36 @@
+doctype html
+head
+    meta(charset='utf-8')
+    meta(http-equiv='x-ua-compatible', content='ie=edge')
+    title
+        block title
+            = page.title
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href=contents.css['fonts.css'].url)
+    link(rel='stylesheet', href=contents.css['normalize.css'].url)
+    link(rel='stylesheet', href=contents.css['main.css'].url)
+body.bodyclass#body
+    .page
+        .image
+            section.headline
+                h1.alpha
+                    = locals.name
+                h2.beta
+                    = locals.subtitle
+        .content
+            .content-inner
+                section.headline
+                    p.alpha
+                        = locals.name
+                    p.beta
+                        = locals.subtitle
+                .bio
+                    != page.html
+                .social
+                    !=contents['social.md'].html
+    script(type='text/javascript').
+        (function() {
+        var body = document.getElementById('body');
+        body.className = 'loaded';
+        })();
