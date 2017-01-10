@@ -1,5 +1,5 @@
 ---
-title: Tommy Pyatt - Web Developer, Manchester United Kingdom
+title: Tommy Pyatt - Web Developer, Manchester UK
 template: layout.jade
 ---
 
