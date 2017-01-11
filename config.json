@@ -2,12 +2,13 @@
     "locals": {
         "url": "http://tommy.pyatt.me",
         "name": "Tommy Pyatt",
-        "subtitle": "Web developer in Manchester, United Kingdom"
+        "subtitle": "Web developer in Manchester, United Kingdom",
+        "gaTrackingId": "UA-90243602-1"
     },
-        "jade": {
+    "jade": {
         "pretty": true
     },
-        "markdown": {
+    "markdown": {
         "smartLists": true,
         "smartypants": true
     }
