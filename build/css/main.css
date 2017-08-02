@@ -96,7 +96,7 @@ textarea {
    ========================================================================== */
 
 body {
-    font-family: 'raleway', Arial, sans-serif;
+    font-family: 'regular', Arial, sans-serif;
     padding: 0;
     color: #666;
     background: #000;
@@ -114,7 +114,8 @@ h1,
 h2,
 .alpha,
 .beta {
-    font-weight: bold;
+    font-weight: normal;
+    font-family: 'jackinputregular';
     color: #000;
     text-align: left;
 }
@@ -126,7 +127,7 @@ h1,
 
 h2,
 .beta {
-    font-size: 1em;
+    font-size: 1.2em;
 }
 
 .image {
