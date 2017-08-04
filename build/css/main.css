@@ -96,7 +96,7 @@ textarea {
    ========================================================================== */
 
 body {
-    font-family: 'regular', Arial, sans-serif;
+    font-family: 'jackinputregular', monospace;
     padding: 0;
     color: #666;
     background: #000;
@@ -115,7 +115,6 @@ h2,
 .alpha,
 .beta {
     font-weight: normal;
-    font-family: 'jackinputregular';
     color: #000;
     text-align: left;
 }
