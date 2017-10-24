@@ -15,7 +15,7 @@ Some of my personal interests are drawing/painting, psychology, photography, che
 
 ## Past Projects
 
-<a href="http://www.harveynichols.com/" target="_blank">Harvey Nichols</a>, <a href="http://www.boohoo.com/" target="_blank">Boohoo</a>, <a href="https://www.poundland.co.uk/" target="_blank">Poundland</a>, <a href="https://www.bes.co.uk/" target="_blank">BES</a>, <a href="https://www.skins.net/uk/" target="_blank">Skins</a>, <a href="http://www.bensonsforbeds.co.uk/" target="_blank">Benson for Beds</a>, <a href="http://www.harveysfurniture.co.uk/" target="_blank">Harveys Furniture</a>, <a href="https://www.bench.co.uk/" target="_blank">Bench</a>.
+<a href="http://www.coxandcox.co.uk/" target="_blank">Cox & Cox</a>, <a href="http://www.harveynichols.com/" target="_blank">Harvey Nichols</a>, <a href="http://www.boohoo.com/" target="_blank">Boohoo</a>, <a href="https://www.poundland.co.uk/" target="_blank">Poundland</a>, <a href="https://www.bes.co.uk/" target="_blank">BES</a>, <a href="https://www.skins.net/uk/" target="_blank">Skins</a>, <a href="http://www.bensonsforbeds.co.uk/" target="_blank">Benson for Beds</a>, <a href="http://www.harveysfurniture.co.uk/" target="_blank">Harveys Furniture</a>, <a href="https://www.bench.co.uk/" target="_blank">Bench</a>.
 
 ## Work
 
