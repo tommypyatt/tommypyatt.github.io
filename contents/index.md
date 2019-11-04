@@ -19,5 +19,5 @@ Some of my personal interests are drawing/painting, psychology, photography, che
 
 ## Work
 
-I currently work for <a href="http://www.space48.com/" target="_blank">Space 48</a> and am not available for freelancing or other engagements. However, feel free to connect with or contact me via any of the social links below.
+I currently work for <a href="https://www.leesa.com/" target="_blank">Leesa Sleep</a> and am not available for freelancing or other engagements. However, feel free to connect with or contact me via any of the social links below.
 
