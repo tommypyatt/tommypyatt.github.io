@@ -1,0 +1,22 @@
+@import 'base/variables';
+@import 'base/base';
+@import 'components/header';
+@import 'components/nav';
+@import 'components/top';
+
+.page-wrap {
+  position: relative;
+}
+
+.content {
+  padding: 0 10px 15px;
+  margin: 20px 0 30px;
+
+  &__inner {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px 30px 20px;
+    border-radius: 4px;
+    background: #fff;
+  }
+}

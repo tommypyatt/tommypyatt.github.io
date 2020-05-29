@@ -1,0 +1,20 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  padding: 10px 15px;
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+  z-index: 1;
+  box-sizing: border-box;
+
+  .is-scrolled & {
+    opacity: 1;
+  }
+}
+
+.logo {
+  float: left;
+}
