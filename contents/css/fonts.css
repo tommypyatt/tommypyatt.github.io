@@ -1,9 +1,0 @@
-@font-face {
-    font-family: 'jackinputregular';
-    src: url('../fonts/jackinputregular.woff2') format('woff2'),
-         url('../fonts/jackinputregular.woff') format('woff'),
-         url('../fonts/jackinputregular.ttf') format('truetype'),
-         url('../fonts/jackinputregular.svg#ralewayregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
