@@ -14,7 +14,7 @@ if (typeof window !== 'undefined' && typeof document !== 'undefined') {
 
   window.addEventListener('load', () => {
     [].forEach.call(document.getElementsByClassName('mailto-email'), (el) => {
-      el.href = `mailto:${email}`
+      el.href = `mailto:${email}`;
     });
-  })
+  });
 }

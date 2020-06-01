@@ -1,8 +1,12 @@
 .nav {
   float: right;
   list-style: none;
-  margin: 2px 0 0;
-  padding: 0;
+  padding: 3px 0 0;
+
+  &__list {
+    margin: 0;
+    padding: 0;
+  }
 
   &__item {
     float: left;
