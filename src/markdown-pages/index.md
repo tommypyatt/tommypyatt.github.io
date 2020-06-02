@@ -19,3 +19,8 @@ Occasionally I make mistakes, and I learn from them.
 I believe there's great, and often underappreciated, value in modularity and separation of concerns.
 
 If this sounds good to you, and I sound like someone you'd like to work with, have on your team, or you'd just like a further chat, <a href="/" class="mailto-email">get in touch</a>.
+
+### Work
+
+Some examples of people I have worked with: [Ampersand](https://ampersandcommerce.com/), [Space 48](https://www.space48.com/), [Cox & Cox](https://www.coxandcox.co.uk/), [Harvey Nichols](https://www.harveynichols.com/), [Boohoo](https://www.boohoo.com/), [Poundland](https://www.poundland.co.uk/), [Bensons for Beds](https://www.bensonsforbeds.co.uk/), [Harveys Furniture](https://www.harveysfurniture.co.uk/), [Leesa Sleep](https://www.leesa.com/).
+
