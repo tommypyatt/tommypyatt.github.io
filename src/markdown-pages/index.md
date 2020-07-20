@@ -4,7 +4,7 @@ date: "2020-05-04"
 title: "Home"
 ---
 
-I'm a front-end web developer, based in Manchester. I'm currently open to new opportunities. Here's a little about me.
+I'm a front-end web developer, based in Manchester. Here's a little about me.
 
 I have worked in the e-commerce space, mostly with Magento, for the past 8 years or so. I've worked extensively with plenty of front-end frameworks: Backbone, Knockout, React, Redux, SASS, Handlebars, Gulp, Webpack, if you're a keywords kind of person. I'm not overly attached to any particular tool or framework, and I love learning new stuff, but I have had the most fun working with and learning React. This site is built with Gatsby.
 
@@ -18,9 +18,6 @@ Occasionally I make mistakes, and I learn from them.
 
 I believe there's great, and often underappreciated, value in modularity and separation of concerns.
 
-If this sounds good to you, and I sound like someone you'd like to work with, have on your team, or you'd just like a further chat, <a href="/" class="mailto-email">get in touch</a>.
-
 ### Work
 
 Some examples of people I have worked with: [Ampersand](https://ampersandcommerce.com/), [Space 48](https://www.space48.com/), [Cox & Cox](https://www.coxandcox.co.uk/), [Harvey Nichols](https://www.harveynichols.com/), [Boohoo](https://www.boohoo.com/), [Poundland](https://www.poundland.co.uk/), [Bensons for Beds](https://www.bensonsforbeds.co.uk/), [Harveys Furniture](https://www.harveysfurniture.co.uk/), [Leesa Sleep](https://www.leesa.com/).
-
