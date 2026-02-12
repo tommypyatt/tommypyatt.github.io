@@ -6,7 +6,7 @@ import matter from "gray-matter";
 import { marked } from "marked";
 import ejs from "ejs";
 
-import { cleanDir, ensureDir, getFiles, getSlugFromFilename } from "./utils.js";
+import { cleanDir, ensureDir, getFiles, getSlugFromFilename, slugify } from "./utils.js";
 import { processAllImages, generateResponsiveHTML } from "./imageOptimizer.js";
 import config from "../site.config.js";
 
@@ -311,6 +311,99 @@ async function buildBlogIndex(posts, icons = {}) {
   }
 }
 
+function collectTags(posts) {
+  console.log("Collecting tags from posts...");
+  const tagMap = new Map();
+
+  posts.forEach(post => {
+    if (post.tags && Array.isArray(post.tags)) {
+      post.tags.forEach(tag => {
+        const slug = slugify(tag);
+        if (tagMap.has(slug)) {
+          tagMap.get(slug).count++;
+        } else {
+          tagMap.set(slug, { tag, slug, count: 1 });
+        }
+      });
+    }
+  });
+
+  // Sort by count (descending), then alphabetically
+  const tags = Array.from(tagMap.values()).sort((a, b) => {
+    if (b.count !== a.count) return b.count - a.count;
+    return a.tag.localeCompare(b.tag);
+  });
+
+  console.log(`  Found ${tags.length} unique tags`);
+  return tags;
+}
+
+async function buildTagArchives(posts, tags, icons = {}) {
+  console.log("Building tag archives...");
+  const postsPerPage = config.postsPerPage || 5;
+
+  for (const { tag, slug, count } of tags) {
+    // Filter posts that have this tag
+    const tagPosts = posts.filter(post =>
+      post.tags && post.tags.some(t => slugify(t) === slug)
+    );
+
+    // Calculate pagination
+    const totalPages = Math.ceil(tagPosts.length / postsPerPage) || 1;
+
+    // Generate pages for this tag
+    for (let page = 1; page <= totalPages; page++) {
+      const startIndex = (page - 1) * postsPerPage;
+      const endIndex = startIndex + postsPerPage;
+      const pagePosts = tagPosts.slice(startIndex, endIndex).map(post => ({
+        ...post,
+        formattedDate: formatDate(post.date)
+      }));
+
+      const html = await renderTemplate("tag-archive", {
+        tag,
+        slug,
+        posts: pagePosts,
+        currentPage: page,
+        totalPages,
+        title: page > 1 ? `${tag} - Page ${page}` : tag,
+        currentPath: `blog/tags/${slug}`
+      }, icons);
+
+      let outputPath;
+      if (page === 1) {
+        const tagDir = path.join(OUTPUT_DIR, "blog", "tags", slug);
+        await ensureDir(tagDir);
+        outputPath = path.join(tagDir, "index.html");
+      } else {
+        const pageDir = path.join(OUTPUT_DIR, "blog", "tags", slug, "page", String(page));
+        await ensureDir(pageDir);
+        outputPath = path.join(pageDir, "index.html");
+      }
+
+      await fs.writeFile(outputPath, html);
+      console.log(`  Created: ${path.relative(OUTPUT_DIR, outputPath)}`);
+    }
+  }
+}
+
+async function buildTagIndex(tags, icons = {}) {
+  console.log("Building tag index...");
+
+  const html = await renderTemplate("tag-index", {
+    tags,
+    title: "Tags",
+    currentPath: "blog/tags"
+  }, icons);
+
+  const tagIndexDir = path.join(OUTPUT_DIR, "blog", "tags");
+  await ensureDir(tagIndexDir);
+  const outputPath = path.join(tagIndexDir, "index.html");
+
+  await fs.writeFile(outputPath, html);
+  console.log(`  Created: ${path.relative(OUTPUT_DIR, outputPath)}`);
+}
+
 async function build() {
   console.log("Starting build...\n");
 
@@ -349,6 +442,15 @@ async function build() {
 
   // Build blog index with pagination
   await buildBlogIndex(posts, icons);
+  console.log("");
+
+  // Build tag archives
+  const tags = collectTags(posts);
+  await buildTagArchives(posts, tags, icons);
+  console.log("");
+
+  // Build tag index
+  await buildTagIndex(tags, icons);
   console.log("");
 
   // Build RSS feed
