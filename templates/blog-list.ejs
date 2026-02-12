@@ -19,7 +19,11 @@
         <% if (post.tags && post.tags.length > 0) { %>
         <div class="flex flex-wrap gap-2 mb-3">
           <% post.tags.forEach(tag => { %>
-          <span class="px-2 py-0.5 bg-background-elevated text-primary-400 text-xs rounded-full border border-border"><%= tag %></span>
+          <%
+            // Slugify function inline (same as in utils.js)
+            const tagSlug = tag.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+          %>
+          <a href="<%= resolveUrl(`/blog/tags/${tagSlug}/`) %>" class="px-2 py-0.5 bg-background-elevated text-primary-400 text-xs rounded-full border border-border hover:bg-primary-400 hover:text-background-elevated transition-colors"><%= tag %></a>
           <% }); %>
         </div>
         <% } %>
