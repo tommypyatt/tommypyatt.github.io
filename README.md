@@ -1,6 +1,6 @@
 # Personal Website & Blog
 
-A personal website and blog built with a custom Node.js static site generator. Features Markdown content authoring, Tailwind CSS styling, and Alpine.js interactivity.
+A personal website and blog built with a custom Node.js static site generator. Features Markdown content authoring, EJS templating, Tailwind CSS styling, and Alpine.js interactivity.
 
 ## Quickstart
 
@@ -27,7 +27,7 @@ npm run dev
 
 This watches for changes in:
 - `content/**/*.md` - Markdown content
-- `templates/**/*.js` - HTML templates
+- `templates/**/*.ejs` - EJS templates
 - `src/**/*.css` - Styles
 - `site.config.js` - Site configuration
 
@@ -39,10 +39,16 @@ In a separate terminal, run `npm run serve` to preview changes.
 ├── content/
 │   ├── pages/          # Standalone pages (index.md, about.md, etc.)
 │   └── blog/           # Blog posts
-├── templates/          # HTML templates
+├── templates/          # EJS templates
+│   ├── layouts/        # Base layout template
+│   ├── partials/       # Reusable template components (header, footer)
+│   ├── page.ejs        # Page template
+│   ├── post.ejs        # Blog post template
+│   └── blog-list.ejs   # Blog listing with pagination
 ├── scripts/            # Build scripts
 ├── src/
 │   ├── styles.css      # Tailwind CSS source
+│   ├── icons/          # SVG icon files
 │   ├── favicon.svg     # Site favicon
 │   └── CNAME           # Custom domain for GitHub Pages
 ├── docs/               # Built site (GitHub Pages)
@@ -262,9 +268,13 @@ To hide a social link, remove it from the object or set it to `null`. To hide al
 
 ### Styling
 
-Edit `src/styles.css` for global styles. The site uses Tailwind CSS - edit templates in `templates/` to change component styles.
+Edit `src/styles.css` for global styles. The site uses Tailwind CSS - edit EJS templates in `templates/` to change component styles.
 
 To customise Tailwind, edit `tailwind.config.js`.
+
+### Icons
+
+Social media and UI icons are stored as individual SVG files in `src/icons/`. The build process reads these files and inlines them into the templates during the build. To add or modify icons, edit the SVG files in `src/icons/`.
 
 ### Colors
 
