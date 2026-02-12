@@ -4,12 +4,10 @@ import { fileURLToPath } from "url";
 import { execSync } from "child_process";
 import matter from "gray-matter";
 import { marked } from "marked";
+import ejs from "ejs";
 
 import { cleanDir, ensureDir, getFiles, getSlugFromFilename } from "./utils.js";
 import { processAllImages, generateResponsiveHTML } from "./imageOptimizer.js";
-import { renderPage } from "../templates/page.js";
-import { renderPost } from "../templates/post.js";
-import { renderBlogList } from "../templates/blog-list.js";
 import config from "../site.config.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -19,6 +17,73 @@ const OUTPUT_DIR = path.join(ROOT_DIR, "docs");
 const ASSETS_DIR = path.join(OUTPUT_DIR, "assets");
 const IMAGES_SRC_DIR = path.join(CONTENT_DIR, "images");
 const IMAGES_DEST_DIR = path.join(ASSETS_DIR, "images");
+const TEMPLATES_DIR = path.join(ROOT_DIR, "templates");
+
+// Helper functions for templates
+function resolveUrl(urlPath) {
+  const base = config.baseUrl || "";
+  if (urlPath.startsWith("/")) {
+    return `${base}${urlPath}`;
+  }
+  return `${base}/${urlPath}`;
+}
+
+function formatDate(dateStr) {
+  const date = new Date(dateStr);
+  return date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+  });
+}
+
+// Load SVG icons into memory for inlining
+async function loadIcons() {
+  const iconsDir = path.join(ROOT_DIR, "src", "icons");
+  const icons = {};
+
+  try {
+    const iconFiles = await getFiles(iconsDir, ".svg");
+    for (const iconPath of iconFiles) {
+      const iconName = path.basename(iconPath, ".svg");
+      const svgContent = await fs.readFile(iconPath, "utf-8");
+      icons[iconName] = svgContent;
+    }
+  } catch (err) {
+    console.warn("Warning: Could not load icons:", err.message);
+  }
+
+  return icons;
+}
+
+// Render EJS template with layout
+async function renderTemplate(templateName, data, icons = {}) {
+  const templatePath = path.join(TEMPLATES_DIR, `${templateName}.ejs`);
+  const layoutPath = path.join(TEMPLATES_DIR, "layouts", "base.ejs");
+
+  // Render the content template
+  const content = await ejs.renderFile(templatePath, {
+    ...data,
+    config,
+    resolveUrl,
+    formatDate,
+    icons
+  });
+
+  // Render the layout with the content
+  const pageTitle = data.title ? `${data.title} | ${config.siteTitle}` : config.siteTitle;
+  const html = await ejs.renderFile(layoutPath, {
+    ...data,
+    content,
+    pageTitle,
+    config,
+    resolveUrl,
+    formatDate,
+    icons
+  });
+
+  return html;
+}
 
 // Configure custom image renderer for responsive images
 const renderer = new marked.Renderer();
@@ -77,7 +142,7 @@ async function parseMarkdownFile(filePath) {
   };
 }
 
-async function buildPages() {
+async function buildPages(icons = {}) {
   console.log("Building pages...");
   const pagesDir = path.join(CONTENT_DIR, "pages");
   const pageFiles = await getFiles(pagesDir);
@@ -86,11 +151,12 @@ async function buildPages() {
     const { frontMatter, content } = await parseMarkdownFile(filePath);
     const slug = getSlugFromFilename(filePath);
 
-    const html = renderPage({
+    const html = await renderTemplate("page", {
       title: frontMatter.title,
       content,
-      slug
-    });
+      slug,
+      currentPath: slug || "index"
+    }, icons);
 
     let outputPath;
     if (slug === "index") {
@@ -109,7 +175,7 @@ async function buildPages() {
   }
 }
 
-async function buildBlogPosts() {
+async function buildBlogPosts(icons = {}) {
   console.log("Building blog posts...");
   const blogDir = path.join(CONTENT_DIR, "blog");
   const postFiles = await getFiles(blogDir);
@@ -137,13 +203,15 @@ async function buildBlogPosts() {
     });
 
     // Generate individual post page
-    const html = renderPost({
+    const html = await renderTemplate("post", {
       title: frontMatter.title,
       date: frontMatter.date,
+      formattedDate: formatDate(frontMatter.date),
       content,
       tags: frontMatter.tags,
-      slug
-    });
+      slug,
+      currentPath: `blog/${slug}`
+    }, icons);
 
     const postDir = path.join(OUTPUT_DIR, "blog", slug);
     await ensureDir(postDir);
@@ -206,7 +274,7 @@ ${items.join("\n")}
   console.log(`  Created: ${path.relative(OUTPUT_DIR, outputPath)}`);
 }
 
-async function buildBlogIndex(posts) {
+async function buildBlogIndex(posts, icons = {}) {
   console.log("Building blog index with pagination...");
   const postsPerPage = config.postsPerPage || 5;
   const totalPages = Math.ceil(posts.length / postsPerPage) || 1;
@@ -214,13 +282,18 @@ async function buildBlogIndex(posts) {
   for (let page = 1; page <= totalPages; page++) {
     const startIndex = (page - 1) * postsPerPage;
     const endIndex = startIndex + postsPerPage;
-    const pagePosts = posts.slice(startIndex, endIndex);
+    const pagePosts = posts.slice(startIndex, endIndex).map(post => ({
+      ...post,
+      formattedDate: formatDate(post.date)
+    }));
 
-    const html = renderBlogList({
+    const html = await renderTemplate("blog-list", {
       posts: pagePosts,
       currentPage: page,
-      totalPages
-    });
+      totalPages,
+      title: page > 1 ? `Blog - Page ${page}` : "Blog",
+      currentPath: "blog"
+    }, icons);
 
     let outputPath;
     if (page === 1) {
@@ -244,6 +317,12 @@ async function build() {
   // Clean output directory
   await cleanDir(OUTPUT_DIR);
 
+  // Load icons for inlining
+  console.log("Loading icons...");
+  const icons = await loadIcons();
+  console.log(`  Loaded ${Object.keys(icons).length} icon(s)`);
+  console.log("");
+
   // Process images (must be done before markdown parsing)
   await processAllImages(IMAGES_SRC_DIR, IMAGES_DEST_DIR);
   console.log("");
@@ -261,15 +340,15 @@ async function build() {
   console.log("");
 
   // Build pages
-  await buildPages();
+  await buildPages(icons);
   console.log("");
 
   // Build blog posts and get sorted list
-  const posts = await buildBlogPosts();
+  const posts = await buildBlogPosts(icons);
   console.log("");
 
   // Build blog index with pagination
-  await buildBlogIndex(posts);
+  await buildBlogIndex(posts, icons);
   console.log("");
 
   // Build RSS feed
