@@ -1,0 +1,55 @@
+<footer class="bg-background-surface border-t border-border-subtle mt-auto">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+      <p class="text-foreground-subtle text-sm"><%= config.footer.copyright %></p>
+      <div class="flex items-center space-x-4">
+        <% if (config.socialLinks) { %>
+          <% if (config.socialLinks.linkedin) { %>
+          <a href="<%= config.socialLinks.linkedin %>" target="_blank" rel="noopener noreferrer" class="text-foreground-subtle hover:text-primary-400 transition-colors" aria-label="LinkedIn">
+            <%- icons.linkedin || '' %>
+          </a>
+          <% } %>
+          <% if (config.socialLinks.github) { %>
+          <a href="<%= config.socialLinks.github %>" target="_blank" rel="noopener noreferrer" class="text-foreground-subtle hover:text-primary-400 transition-colors" aria-label="GitHub">
+            <%- icons.github || '' %>
+          </a>
+          <% } %>
+          <% if (config.socialLinks.twitter) { %>
+          <a href="<%= config.socialLinks.twitter %>" target="_blank" rel="noopener noreferrer" class="text-foreground-subtle hover:text-primary-400 transition-colors" aria-label="Twitter">
+            <%- icons.twitter || '' %>
+          </a>
+          <% } %>
+          <% if (config.socialLinks.medium) { %>
+          <a href="<%= config.socialLinks.medium %>" target="_blank" rel="noopener noreferrer" class="text-foreground-subtle hover:text-primary-400 transition-colors" aria-label="Medium">
+            <%- icons.medium || '' %>
+          </a>
+          <% } %>
+          <% if (config.socialLinks.email) { %>
+          <a href="#" id="email-link" data-e="<%= config.socialLinks.email %>" class="text-foreground-subtle hover:text-primary-400 transition-colors" aria-label="Email">
+            <%- icons.email || '' %>
+          </a>
+          <% } %>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  [x-cloak] { display: none !important; }
+</style>
+<script>
+  (function() {
+    var el = document.getElementById('email-link');
+    if (el) {
+      var d = el.getAttribute('data-e');
+      if (d) {
+        try {
+          var e = atob(d);
+          el.href = 'mailto:' + e;
+          el.removeAttribute('data-e');
+        } catch(err) {}
+      }
+    }
+  })();
+</script>
