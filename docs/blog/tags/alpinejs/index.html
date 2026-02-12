@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Personal website and blog">
   <meta name="author" content="Tommy Pyatt">
-  <title>Blog | Tommy Pyatt</title>
+  <title>alpinejs | Tommy Pyatt</title>
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
   <link rel="stylesheet" href="/assets/styles.css">
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -73,8 +73,19 @@
     
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <header class="mb-10">
-        <h1 class="text-3xl md:text-4xl font-bold text-foreground-heading mb-4">Blog</h1>
-        <p class="text-foreground-muted">My thoughts, ideas and updates. Updated infrequently. Probably.</p>
+        <nav class="text-sm mb-4" aria-label="Breadcrumb">
+          <ol class="flex items-center space-x-2 text-foreground-subtle">
+            <li><a href="/blog/" class="hover:text-primary-400 transition-colors">Blog</a></li>
+            <li><span class="text-foreground-disabled">/</span></li>
+            <li><a href="/blog/tags/" class="hover:text-primary-400 transition-colors">Tags</a></li>
+            <li><span class="text-foreground-disabled">/</span></li>
+            <li class="text-foreground" aria-current="page">alpinejs</li>
+          </ol>
+        </nav>
+        <h1 class="text-3xl md:text-4xl font-bold text-foreground-heading mb-4">
+          Posts tagged with "alpinejs"
+        </h1>
+        <p class="text-foreground-muted">1 post on this page</p>
       </header>
 
       <div class="space-y-0">
@@ -93,48 +104,6 @@
       </div>
       <p class="text-foreground-muted mb-4">TailwindCSS and AlpineJS are an unusually good match for AI‑assisted and AI‑generated coding because they give AI small, predictable building blocks instead of a sprawling framework to understand.</p>
       <a href="/blog/ai-friendly-frontends/" class="inline-flex items-center text-primary-400 hover:text-primary-300 font-medium transition-colors" aria-label="Read more: AI‑Friendly Frontends: How TailwindCSS and AlpineJS Fit Together">
-        Read more
-        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-        </svg>
-      </a>
-    </article>
-  
-    <article class="border-b border-border-subtle pb-8 mb-8 last:border-b-0 last:pb-0 last:mb-0">
-      <p class="text-foreground-subtle text-sm mb-2">
-        <time datetime="Sat Jan 18 2025 00:00:00 GMT+0000 (Greenwich Mean Time)">January 18, 2025</time>
-      </p>
-      <h2 class="text-xl md:text-2xl font-semibold text-foreground-heading mb-3">
-        <a href="/blog/embracing-ai/" class="hover:text-primary-400 transition-colors">
-          Embracing AI: A Force for Good in the Age of Intelligent Systems
-        </a>
-      </h2>
-      <div class="flex flex-wrap gap-2 mb-3">
-        <a href="/blog/tags/artificial-intelligence/" class="px-2 py-0.5 bg-background-elevated text-primary-400 text-xs rounded-full border border-border hover:bg-primary-400 hover:text-background-elevated transition-colors">artificial intelligence</a>
-      </div>
-      <p class="text-foreground-muted mb-4">Artificial intelligence is no longer a distant concept confined to research labs or sci-fi stories. It’s everywhere - from the phones in our pockets to the tools we use at work.</p>
-      <a href="/blog/embracing-ai/" class="inline-flex items-center text-primary-400 hover:text-primary-300 font-medium transition-colors" aria-label="Read more: Embracing AI: A Force for Good in the Age of Intelligent Systems">
-        Read more
-        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-        </svg>
-      </a>
-    </article>
-  
-    <article class="border-b border-border-subtle pb-8 mb-8 last:border-b-0 last:pb-0 last:mb-0">
-      <p class="text-foreground-subtle text-sm mb-2">
-        <time datetime="Fri Jan 17 2025 00:00:00 GMT+0000 (Greenwich Mean Time)">January 17, 2025</time>
-      </p>
-      <h2 class="text-xl md:text-2xl font-semibold text-foreground-heading mb-3">
-        <a href="/blog/structuring-tailwind-in-large-hyva-projects/" class="hover:text-primary-400 transition-colors">
-          Structuring Tailwind in Large Hyvä Projects
-        </a>
-      </h2>
-      <div class="flex flex-wrap gap-2 mb-3">
-        <a href="/blog/tags/magento/" class="px-2 py-0.5 bg-background-elevated text-primary-400 text-xs rounded-full border border-border hover:bg-primary-400 hover:text-background-elevated transition-colors">magento</a><a href="/blog/tags/hyva/" class="px-2 py-0.5 bg-background-elevated text-primary-400 text-xs rounded-full border border-border hover:bg-primary-400 hover:text-background-elevated transition-colors">hyva</a><a href="/blog/tags/tailwindcss/" class="px-2 py-0.5 bg-background-elevated text-primary-400 text-xs rounded-full border border-border hover:bg-primary-400 hover:text-background-elevated transition-colors">tailwindcss</a>
-      </div>
-      <p class="text-foreground-muted mb-4">Structuring Tailwind in large Hyvä projects is mostly about taming growth before it becomes chaos and making the config reflect your design system, not just your current screens.</p>
-      <a href="/blog/structuring-tailwind-in-large-hyva-projects/" class="inline-flex items-center text-primary-400 hover:text-primary-300 font-medium transition-colors" aria-label="Read more: Structuring Tailwind in Large Hyvä Projects">
         Read more
         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />

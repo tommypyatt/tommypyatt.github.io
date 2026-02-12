@@ -1,20 +1,15 @@
 import { layout, resolveUrl } from "./layout.js";
-
-function formatDate(dateStr) {
-  const date = new Date(dateStr);
-  return date.toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric"
-  });
-}
+import { formatDate, slugify } from "./shared.js";
 
 export function renderPost({ title, date, content, tags, slug }) {
   const formattedDate = formatDate(date);
 
   const tagsHtml = tags && tags.length > 0
     ? `<div class="flex flex-wrap gap-2 mb-6">
-        ${tags.map(tag => `<span class="px-3 py-1 bg-background-elevated text-primary-400 text-sm rounded-full border border-border">${tag}</span>`).join("")}
+        ${tags.map(tag => {
+          const tagSlug = slugify(tag);
+          return `<a href="${resolveUrl(`/blog/tags/${tagSlug}/`)}" class="px-3 py-1 bg-background-elevated text-primary-400 text-sm rounded-full border border-border hover:bg-primary-400 hover:text-background-elevated transition-colors">${tag}</a>`;
+        }).join("")}
       </div>`
     : "";
 

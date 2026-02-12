@@ -1,21 +1,20 @@
 import { layout, resolveUrl } from "./layout.js";
 import { renderPostCard } from "./shared.js";
-import config from "../site.config.js";
 
-function renderPagination({ currentPage, totalPages }) {
+function renderPagination({ currentPage, totalPages, tagSlug }) {
   if (totalPages <= 1) return "";
 
   const prevPage = currentPage > 1 ? currentPage - 1 : null;
   const nextPage = currentPage < totalPages ? currentPage + 1 : null;
 
   const prevUrl = prevPage === 1
-    ? resolveUrl("/blog/")
-    : prevPage ? resolveUrl(`/blog/page/${prevPage}/`) : null;
+    ? resolveUrl(`/blog/tags/${tagSlug}/`)
+    : prevPage ? resolveUrl(`/blog/tags/${tagSlug}/page/${prevPage}/`) : null;
 
-  const nextUrl = nextPage ? resolveUrl(`/blog/page/${nextPage}/`) : null;
+  const nextUrl = nextPage ? resolveUrl(`/blog/tags/${tagSlug}/page/${nextPage}/`) : null;
 
   return `
-    <nav class="flex justify-between items-center pt-8 border-t border-border-subtle" aria-label="Blog pagination">
+    <nav class="flex justify-between items-center pt-8 border-t border-border-subtle" aria-label="Tag archive pagination">
       <div>
         ${prevUrl
           ? `<a href="${prevUrl}" class="inline-flex items-center text-primary-400 hover:text-primary-300 font-medium transition-colors">
@@ -43,27 +42,38 @@ function renderPagination({ currentPage, totalPages }) {
   `;
 }
 
-export function renderBlogList({ posts, currentPage, totalPages }) {
+export function renderTagArchive({ tag, slug, posts, currentPage, totalPages }) {
   const postsHtml = posts.map(renderPostCard).join("");
 
   const pageContent = `
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <header class="mb-10">
-        <h1 class="text-3xl md:text-4xl font-bold text-foreground-heading mb-4">Blog</h1>
-        <p class="text-foreground-muted">${config.blogIntro}</p>
+        <nav class="text-sm mb-4" aria-label="Breadcrumb">
+          <ol class="flex items-center space-x-2 text-foreground-subtle">
+            <li><a href="${resolveUrl("/blog/")}" class="hover:text-primary-400 transition-colors">Blog</a></li>
+            <li><span class="text-foreground-disabled">/</span></li>
+            <li><a href="${resolveUrl("/blog/tags/")}" class="hover:text-primary-400 transition-colors">Tags</a></li>
+            <li><span class="text-foreground-disabled">/</span></li>
+            <li class="text-foreground" aria-current="page">${tag}</li>
+          </ol>
+        </nav>
+        <h1 class="text-3xl md:text-4xl font-bold text-foreground-heading mb-4">
+          Posts tagged with "${tag}"
+        </h1>
+        <p class="text-foreground-muted">${posts.length} ${posts.length === 1 ? 'post' : 'posts'} on this page</p>
       </header>
 
       <div class="space-y-0">
-        ${postsHtml || `<p class="text-foreground-subtle">No posts yet. Check back soon!</p>`}
+        ${postsHtml || `<p class="text-foreground-subtle">No posts found with this tag.</p>`}
       </div>
 
-      ${renderPagination({ currentPage, totalPages })}
+      ${renderPagination({ currentPage, totalPages, tagSlug: slug })}
     </div>
   `;
 
   return layout({
-    title: currentPage > 1 ? `Blog - Page ${currentPage}` : "Blog",
+    title: currentPage > 1 ? `${tag} - Page ${currentPage}` : tag,
     content: pageContent,
-    currentPath: "blog"
+    currentPath: `blog/tags/${slug}`
   });
 }
