@@ -12,7 +12,7 @@ export default {
       colors: {
         // Primary accent color - used for links, highlights, interactive elements
         // Change this to switch the site's accent color (e.g., colors.blue, colors.emerald)
-        primary: colors.cyan,
+        primary: colors.emerald,
 
         // Background colors - page and surface hierarchy
         background: {
