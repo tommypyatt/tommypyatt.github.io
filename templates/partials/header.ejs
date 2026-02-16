@@ -4,13 +4,13 @@
       <!-- Logo/Site Title -->
       <div class="flex items-center">
         <% if (currentPath === "index") { %>
-        <h1 class="text-xl font-bold m-0">
+        <h1 class="text-2xl font-bold font-serif m-0">
           <a href="<%= resolveUrl('/') %>" class="text-foreground-heading hover:text-primary-400 transition-colors">
             <%= config.siteTitle %>
           </a>
         </h1>
         <% } else { %>
-        <a href="<%= resolveUrl('/') %>" class="text-xl font-bold text-foreground-heading hover:text-primary-400 transition-colors">
+        <a href="<%= resolveUrl('/') %>" class="text-2xl font-bold font-serif text-foreground-heading hover:text-primary-400 transition-colors">
           <%= config.siteTitle %>
         </a>
         <% } %>

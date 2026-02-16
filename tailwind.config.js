@@ -9,10 +9,13 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        serif: ['"Source Serif 4"', 'Georgia', 'serif'],
+      },
       colors: {
         // Primary accent color - used for links, highlights, interactive elements
         // Change this to switch the site's accent color (e.g., colors.blue, colors.emerald)
-        primary: colors.emerald,
+        primary: colors.sky,
 
         // Background colors - page and surface hierarchy
         background: {
