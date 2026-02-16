@@ -130,6 +130,16 @@ async function copyCNAME() {
   console.log("  Created: CNAME");
 }
 
+async function copyAlpine() {
+  console.log("Copying Alpine.js...");
+  const inputAlpine = path.join(ROOT_DIR, "node_modules", "alpinejs", "dist", "cdn.min.js");
+  const outputAlpine = path.join(ASSETS_DIR, "alpine.min.js");
+
+  await ensureDir(ASSETS_DIR);
+  await fs.copyFile(inputAlpine, outputAlpine);
+  console.log("  Created: assets/alpine.min.js");
+}
+
 async function parseMarkdownFile(filePath) {
   const fileContent = await fs.readFile(filePath, "utf-8");
   const { data, content } = matter(fileContent);
@@ -430,6 +440,10 @@ async function build() {
 
   // Copy CNAME for GitHub Pages custom domain
   await copyCNAME();
+  console.log("");
+
+  // Copy Alpine.js from node_modules
+  await copyAlpine();
   console.log("");
 
   // Build pages

@@ -1,6 +1,6 @@
 # Personal Website & Blog
 
-A personal website and blog built with a custom Node.js static site generator. Features Markdown content authoring, EJS templating, Tailwind CSS styling, and Alpine.js interactivity.
+A personal website and blog built with a custom Node.js static site generator. Features Markdown content authoring, EJS templating, Tailwind CSS styling, and Alpine.js interactivity (bundled locally, no CDN dependencies at runtime).
 
 ## Quickstart
 
