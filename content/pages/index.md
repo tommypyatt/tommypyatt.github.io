@@ -18,4 +18,4 @@ Check out the [blog](/blog/) to see my latest articles and updates.
 
 ## Get in Touch
 
-Feel free to reach out if you'd like to connect or collaborate on something interesting. You can learn more about me on the [About](/about/) page.
+Feel free to reach out if you'd like to connect or collaborate on something interesting. You can learn more about me on my [About](/about/) page.
