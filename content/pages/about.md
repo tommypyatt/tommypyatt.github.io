@@ -10,7 +10,7 @@ My focus in my work is always on clarity and maintainability. I like writing cod
 
 Git keeps my workflow organised and honest - every branch tells the story of what I've learned along the way.
 
-Outside of work you'll usually find me tinkering with something or other — setting up a retro gaming machine, experimenting with audio gear, or researching the latest in local AI tooling. I'm also genuinely passionate about open‑source and Linux; most of my experiments start in a terminal window on some distro I've broken and fixed a few times. I like understanding how things work, breaking them (occasionally), and learning from the process.
+Outside of work you'll usually find me tinkering with something or other - setting up a retro gaming machine, experimenting with audio gear, or researching the latest in local AI tooling. I'm also genuinely passionate about open‑source and Linux; most of my experiments start in a terminal window on some distro I've broken and fixed a few times. I like understanding how things work, breaking them (occasionally), and learning from the process.
 
 ----
 
