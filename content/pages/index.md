@@ -2,20 +2,8 @@
 title: ""
 ---
 
-Hello and welcome! I'm a software developer passionate about building great products and sharing what I learn along the way.
+# Tommy Pyatt - Adobe Commerce Frontend Developer
 
-## What You'll Find Here
+Specialist in Hyvä themes, Tailwind CSS, and Alpine.js. 13+ years building and maintaining Adobe Commerce storefronts, from legacy Luma setups through to modern Hyvä builds. Currently available for contract work.
 
-This site is my corner of the internet where I share my thoughts on:
-
-- **Software Development** - Tips, tutorials, and best practices
-- **Technology** - Exploring new tools and frameworks
-- **Personal Projects** - Deep dives into things I'm building
-
-## Latest Posts
-
-Check out the [blog](/blog/) to see my latest articles and updates.
-
-## Get in Touch
-
-Feel free to reach out if you'd like to connect or collaborate on something interesting. You can learn more about me on my [About](/about/) page.
+[View my CV](/cv/) &nbsp;·&nbsp; [Read my writing](/blog/)

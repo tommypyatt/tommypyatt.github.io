@@ -14,13 +14,14 @@ export default {
   postsPerPage: 5,
 
   // Blog listing intro text
-  blogIntro: "My thoughts, ideas and updates. Updated infrequently. Probably.",
+  blogIntro: "Sporadic, but deliberate.",
 
   // Navigation links - used for both desktop and mobile nav
   navLinks: [
     { label: "Home", type: "page", slug: "" },
     { label: "About", type: "page", slug: "about" },
-    { label: "Blog", type: "blog", slug: "blog" }
+    { label: "CV", type: "page", slug: "cv" },
+    { label: "Writing", type: "blog", slug: "blog" }
   ],
 
   // Footer content
