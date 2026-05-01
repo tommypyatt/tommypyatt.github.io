@@ -5,28 +5,8 @@
     <link>https://tommy.pyatt.me</link>
     <description>Personal website and blog</description>
     <language>en</language>
-    <lastBuildDate>Tue, 17 Feb 2026 17:55:56 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 01 May 2026 10:43:14 GMT</lastBuildDate>
     <atom:link href="https://tommy.pyatt.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <item>
-      <title>AI‑Friendly Frontends: How TailwindCSS and AlpineJS Fit Together</title>
-      <link>https://tommy.pyatt.me/blog/ai-friendly-frontends/</link>
-      <guid isPermaLink="true">https://tommy.pyatt.me/blog/ai-friendly-frontends/</guid>
-      <description>TailwindCSS and AlpineJS are an unusually good match for AI‑assisted and AI‑generated coding because they give AI small, predictable building blocks instead of a sprawling framework to understand.</description>
-      <pubDate>Mon, 27 Jan 2025 00:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>Embracing AI: A Force for Good in the Age of Intelligent Systems</title>
-      <link>https://tommy.pyatt.me/blog/embracing-ai/</link>
-      <guid isPermaLink="true">https://tommy.pyatt.me/blog/embracing-ai/</guid>
-      <description>Artificial intelligence is no longer a distant concept confined to research labs or sci-fi stories. It’s everywhere - from the phones in our pockets to the tools we use at work.</description>
-      <pubDate>Sat, 18 Jan 2025 00:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>Structuring Tailwind in Large Hyvä Projects</title>
-      <link>https://tommy.pyatt.me/blog/structuring-tailwind-in-large-hyva-projects/</link>
-      <guid isPermaLink="true">https://tommy.pyatt.me/blog/structuring-tailwind-in-large-hyva-projects/</guid>
-      <description>Structuring Tailwind in large Hyvä projects is mostly about taming growth before it becomes chaos and making the config reflect your design system, not just your current screens.</description>
-      <pubDate>Fri, 17 Jan 2025 00:00:00 GMT</pubDate>
-    </item>
+
   </channel>
 </rss>
