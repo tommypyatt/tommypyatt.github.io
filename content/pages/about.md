@@ -10,7 +10,7 @@ My focus in my work is always on clarity and maintainability. I like writing cod
 
 Git keeps my workflow organised and honest - every branch tells the story of what I've learned along the way.
 
-Outside of work you'll usually find me tinkering with something or other - setting up a retro gaming machine, experimenting with audio gear, or researching the latest in local AI tooling. I'm also genuinely passionate about open‑source and Linux; most of my experiments start in a terminal window on some distro I've broken and fixed a few times. I like understanding how things work, breaking them (occasionally), and learning from the process.
+Outside of work you'll usually find me tinkering with something or other - setting up a retro gaming machine, experimenting with audio gear, or researching the latest in local AI tooling - something I've gone well beyond research with. Claude Code in particular has become a core part of how I work day-to-day, and I think being fluent with these tools is fast becoming as important as any other part of the stack. I'm also genuinely passionate about open‑source and Linux; most of my experiments start in a terminal window on some distro I've broken and fixed a few times. I like understanding how things work, breaking them (occasionally), and learning from the process.
 
 If you're looking to work together, you can find my full CV and availability on my [CV page](/cv/).
 

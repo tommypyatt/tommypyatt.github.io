@@ -14,7 +14,7 @@ Manchester, UK &nbsp;·&nbsp; [tommy@pyatt.me](mailto:tommy@pyatt.me)
 
 I'm a frontend developer with 13+ years of experience in the Adobe Commerce (Magento) ecosystem, holding the Adobe Commerce Frontend Developer Expert certification. My primary specialism is Hyvä theme development - building fast, maintainable storefronts with Tailwind CSS and Alpine.js from the ground up. I've worked across the full range of Magento frontend stacks, from legacy Knockout/Luma architectures through to modern Hyvä builds, and I take pride in writing code that's clean, performant, and easy for a team to live with.
 
-I'm based in Manchester and work remotely. Currently available for contract engagements.
+I'm based in Manchester and work remotely. Currently available for contract engagements. I'm an active and experienced user of AI development tooling - Claude Code in particular - and treat it as a core part of how I build and problem-solve.
 
 ---
 
@@ -69,6 +69,8 @@ Core stack: Magento 2 · Hyvä Theme · Tailwind CSS · Alpine.js · LESS/SCSS �
 **Adobe Commerce:** Magento 2 frontend architecture, theme development, checkout customisation, UI component framework, PWA Studio awareness
 
 **Tools & Workflow:** Git, Warden, Docker, VS Code, Linux
+
+**AI & Tooling:** Claude Code, prompt engineering, AI-assisted development workflows
 
 **Certifications:** Adobe Commerce Frontend Developer Expert
 
