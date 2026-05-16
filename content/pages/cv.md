@@ -14,7 +14,7 @@ Manchester, UK &nbsp;·&nbsp; [tommy@pyatt.me](mailto:tommy@pyatt.me)
 
 Adobe Commerce Frontend Expert with 13+ years specialising in Magento 2 and Hyvä, delivering high-performance, accessible storefronts for leading UK agencies and retailers. Proven track record driving measurable improvements in site speed, accessibility, and maintainability. Equally comfortable leading frontend teams and mentoring developers as contributing hands-on across complex multi-store environments.
 
-I'm based in Manchester and work remotely. Currently available for contract engagements. I'm an active user of AI development tooling — Claude Code in particular — and treat it as a core part of how I build and problem-solve.
+I'm based in Manchester and work remotely. Currently available for contract engagements. I'm an active user of AI development tooling - Claude Code in particular - and treat it as a core part of how I build and problem-solve.
 
 ---
 
@@ -34,7 +34,7 @@ I'm based in Manchester and work remotely. Currently available for contract enga
 *Jul 2020 - Nov 2024 · 4 yrs 4 mos · Manchester, Hybrid*
 
 - Led frontend delivery across multiple Adobe Commerce projects, driving adoption of modern Hyvä-based architectures.
-- Built performant storefronts using Hyvä, Tailwind CSS, and Alpine.js — becoming one of the team's primary Hyvä specialists.
+- Built performant storefronts using Hyvä, Tailwind CSS, and Alpine.js - becoming one of the team's primary Hyvä specialists.
 - Gained hands-on backend experience with Adobe Commerce features and managed deployments on AWS.
 - Delivered a bespoke WordPress site end-to-end alongside core ecommerce work.
 - Completed BigDev 2024 training, achieving BigCommerce certification.
@@ -106,8 +106,8 @@ I'm based in Manchester and work remotely. Currently available for contract enga
 
 ## Notable Work
 
-- **Cox & Cox** — Led the full Hyvä frontend rebuild; won Best Upgrade at Magento Imagine 2018.
-- **Poundland** — Led the frontend implementation; ranked in the top 10 major UK retailers by Sitemorse in 2014.
+- **Cox & Cox** - Led the full Hyvä frontend rebuild; won Best Upgrade at Magento Imagine 2018.
+- **Poundland** - Led the frontend implementation; ranked in the top 10 major UK retailers by Sitemorse in 2014.
 
 *Further details available on request.*
 
