@@ -364,6 +364,14 @@ async function copyRobotsTxt() {
   console.log("  Created: robots.txt");
 }
 
+async function copyGoogleVerification() {
+  const filename = "google21e4818b59012c24.html";
+  const src = path.join(ROOT_DIR, "src", filename);
+  const dest = path.join(OUTPUT_DIR, filename);
+  await fs.copyFile(src, dest);
+  console.log(`  Created: ${filename}`);
+}
+
 async function buildBlogIndex(posts, icons = {}) {
   console.log("Building blog index with pagination...");
   const postsPerPage = config.postsPerPage || 5;
@@ -557,6 +565,10 @@ async function build() {
 
   // Copy robots.txt
   await copyRobotsTxt();
+  console.log("");
+
+  // Copy Google Search Console verification file
+  await copyGoogleVerification();
   console.log("");
 
   console.log("Build complete!");
