@@ -1,6 +1,7 @@
 ---
 title: CV
 description: "CV of Tommy Pyatt, Adobe Commerce Frontend Expert with 13+ years specialising in Hyvä themes and Magento 2. Adobe Commerce Frontend Expert certified. Available for contract in the UK."
+template: cv
 ---
 
 # Tommy Pyatt

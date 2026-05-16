@@ -166,7 +166,7 @@ The layout template:
 
 ## Content Writing Guidelines
 
-- Do not use em dashes (—) in any content written for this site. They read as AI-generated. Use commas, parentheses, or rewrite the sentence instead.
+- Do not use em dashes (—) or en dashes (–) in any content written for this site. They read as AI-generated. Use hyphens, commas, parentheses, or rewrite the sentence instead.
 
 ## Guidelines for Common Tasks
 
