@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /blog/page/
+
+Sitemap: https://tommy.pyatt.me/sitemap.xml

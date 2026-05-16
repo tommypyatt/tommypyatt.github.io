@@ -158,10 +158,29 @@ async function buildPages(icons = {}) {
   console.log("Building pages...");
   const pagesDir = path.join(CONTENT_DIR, "pages");
   const pageFiles = await getFiles(pagesDir);
+  const slugs = [];
 
   for (const filePath of pageFiles) {
     const { frontMatter, content } = await parseMarkdownFile(filePath);
     const slug = getSlugFromFilename(filePath);
+    slugs.push(slug);
+
+    let structuredData = null;
+    if (slug === "index") {
+      structuredData = {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": config.author,
+        "url": config.siteUrl,
+        "jobTitle": "Adobe Commerce Frontend Expert",
+        "description": config.siteDescription,
+        "sameAs": [
+          config.socialLinks.linkedin,
+          config.socialLinks.github,
+          config.socialLinks.twitter
+        ].filter(Boolean)
+      };
+    }
 
     const templateName = frontMatter.template || "page";
     const html = await renderTemplate(templateName, {
@@ -169,7 +188,8 @@ async function buildPages(icons = {}) {
       description: frontMatter.description,
       content,
       slug,
-      currentPath: slug || "index"
+      currentPath: slug || "index",
+      structuredData
     }, icons);
 
     let outputPath;
@@ -187,6 +207,8 @@ async function buildPages(icons = {}) {
     await fs.writeFile(outputPath, html);
     console.log(`  Created: ${path.relative(OUTPUT_DIR, outputPath)}`);
   }
+
+  return slugs;
 }
 
 async function buildBlogPosts(icons = {}) {
@@ -216,6 +238,20 @@ async function buildBlogPosts(icons = {}) {
       content
     });
 
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": frontMatter.title,
+      "description": frontMatter.excerpt || "",
+      "datePublished": new Date(frontMatter.date).toISOString(),
+      "author": {
+        "@type": "Person",
+        "name": config.author,
+        "url": config.siteUrl
+      },
+      "url": `${config.siteUrl}/blog/${slug}/`
+    };
+
     // Generate individual post page
     const html = await renderTemplate("post", {
       title: frontMatter.title,
@@ -225,7 +261,8 @@ async function buildBlogPosts(icons = {}) {
       content,
       tags: frontMatter.tags,
       slug,
-      currentPath: `blog/${slug}`
+      currentPath: `blog/${slug}`,
+      structuredData
     }, icons);
 
     const postDir = path.join(OUTPUT_DIR, "blog", slug);
@@ -287,6 +324,44 @@ ${items.join("\n")}
   const outputPath = path.join(OUTPUT_DIR, "feed.xml");
   await fs.writeFile(outputPath, rss);
   console.log(`  Created: ${path.relative(OUTPUT_DIR, outputPath)}`);
+}
+
+async function buildSitemap(posts, pageSlugs) {
+  console.log("Building sitemap...");
+  const siteUrl = config.siteUrl;
+  const urls = [];
+
+  urls.push({ loc: `${siteUrl}/`, priority: "1.0", changefreq: "weekly" });
+
+  for (const slug of pageSlugs) {
+    if (slug === "index" || slug === "404") continue;
+    urls.push({ loc: `${siteUrl}/${slug}/`, priority: "0.8", changefreq: "monthly" });
+  }
+
+  urls.push({ loc: `${siteUrl}/blog/`, priority: "0.7", changefreq: "weekly" });
+
+  for (const post of posts) {
+    const lastmod = new Date(post.date).toISOString().split("T")[0];
+    urls.push({ loc: `${siteUrl}/blog/${post.slug}/`, lastmod, priority: "0.6", changefreq: "never" });
+  }
+
+  const urlElements = urls.map(({ loc, lastmod, changefreq, priority }) => {
+    const lastmodTag = lastmod ? `\n    <lastmod>${lastmod}</lastmod>` : "";
+    return `  <url>\n    <loc>${loc}</loc>${lastmodTag}\n    <changefreq>${changefreq}</changefreq>\n    <priority>${priority}</priority>\n  </url>`;
+  });
+
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urlElements.join("\n")}\n</urlset>`;
+
+  await fs.writeFile(path.join(OUTPUT_DIR, "sitemap.xml"), sitemap);
+  console.log("  Created: sitemap.xml");
+}
+
+async function copyRobotsTxt() {
+  console.log("Copying robots.txt...");
+  const src = path.join(ROOT_DIR, "src", "robots.txt");
+  const dest = path.join(OUTPUT_DIR, "robots.txt");
+  await fs.copyFile(src, dest);
+  console.log("  Created: robots.txt");
 }
 
 async function buildBlogIndex(posts, icons = {}) {
@@ -452,7 +527,7 @@ async function build() {
   console.log("");
 
   // Build pages
-  await buildPages(icons);
+  const pageSlugs = await buildPages(icons);
   console.log("");
 
   // Build blog posts and get sorted list
@@ -474,6 +549,14 @@ async function build() {
 
   // Build RSS feed
   await buildRSS(posts);
+  console.log("");
+
+  // Build sitemap
+  await buildSitemap(posts, pageSlugs);
+  console.log("");
+
+  // Copy robots.txt
+  await copyRobotsTxt();
   console.log("");
 
   console.log("Build complete!");

@@ -6,6 +6,10 @@
   <meta name="description" content="<%= pageDescription %>">
   <meta name="author" content="<%= config.author %>">
   <title><%= pageTitle %></title>
+  <link rel="alternate" type="application/rss+xml" title="<%= config.siteTitle %>" href="<%= config.siteUrl %>/feed.xml">
+  <% if (typeof structuredData !== 'undefined' && structuredData) { %>
+  <script type="application/ld+json"><%- JSON.stringify(structuredData) %></script>
+  <% } %>
   <link rel="icon" type="image/svg+xml" href="<%= resolveUrl('/assets/favicon.svg') %>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
