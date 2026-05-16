@@ -164,6 +164,10 @@ The layout template:
 - Shows desktop nav inline
 - Shows mobile nav via hamburger menu (Alpine.js toggle)
 
+## Content Writing Guidelines
+
+- Do not use em dashes (—) in any content written for this site. They read as AI-generated. Use commas, parentheses, or rewrite the sentence instead.
+
 ## Guidelines for Common Tasks
 
 ### Adding a New Page

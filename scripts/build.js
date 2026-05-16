@@ -72,10 +72,12 @@ async function renderTemplate(templateName, data, icons = {}) {
 
   // Render the layout with the content
   const pageTitle = data.title ? `${data.title} | ${config.siteTitle}` : config.siteTitle;
+  const pageDescription = data.description || config.siteDescription;
   const html = await ejs.renderFile(layoutPath, {
     ...data,
     content,
     pageTitle,
+    pageDescription,
     config,
     resolveUrl,
     formatDate,
@@ -161,8 +163,10 @@ async function buildPages(icons = {}) {
     const { frontMatter, content } = await parseMarkdownFile(filePath);
     const slug = getSlugFromFilename(filePath);
 
-    const html = await renderTemplate("page", {
+    const templateName = frontMatter.template || "page";
+    const html = await renderTemplate(templateName, {
       title: frontMatter.title,
+      description: frontMatter.description,
       content,
       slug,
       currentPath: slug || "index"
@@ -215,6 +219,7 @@ async function buildBlogPosts(icons = {}) {
     // Generate individual post page
     const html = await renderTemplate("post", {
       title: frontMatter.title,
+      description: frontMatter.excerpt,
       date: frontMatter.date,
       formattedDate: formatDate(frontMatter.date),
       content,
