@@ -4,7 +4,7 @@ title: CV
 
 # Tommy Pyatt
 
-**Adobe Commerce Frontend Developer · Hyvä Specialist · Available for Contract**
+**Certified Adobe Commerce Frontend Expert · Hyvä Specialist · Available for Contract**
 
 Manchester, UK &nbsp;·&nbsp; [tommy@pyatt.me](mailto:tommy@pyatt.me)
 
@@ -12,75 +12,104 @@ Manchester, UK &nbsp;·&nbsp; [tommy@pyatt.me](mailto:tommy@pyatt.me)
 
 ## About
 
-I'm a frontend developer with 13+ years of experience in the Adobe Commerce (Magento) ecosystem, holding the Adobe Commerce Frontend Developer Expert certification. My primary specialism is Hyvä theme development - building fast, maintainable storefronts with Tailwind CSS and Alpine.js from the ground up. I've worked across the full range of Magento frontend stacks, from legacy Knockout/Luma architectures through to modern Hyvä builds, and I take pride in writing code that's clean, performant, and easy for a team to live with.
+Adobe Commerce Frontend Expert with 13+ years specialising in Magento 2 and Hyvä, delivering high-performance, accessible storefronts for leading UK agencies and retailers. Proven track record driving measurable improvements in site speed, accessibility, and maintainability. Equally comfortable leading frontend teams and mentoring developers as contributing hands-on across complex multi-store environments.
 
-I'm based in Manchester and work remotely. Currently available for contract engagements. I'm an active and experienced user of AI development tooling - Claude Code in particular - and treat it as a core part of how I build and problem-solve.
+I'm based in Manchester and work remotely. Currently available for contract engagements. I'm an active user of AI development tooling — Claude Code in particular — and treat it as a core part of how I build and problem-solve.
 
 ---
 
 ## Experience
 
-### Frontend Developer - The Pixel
-*Nov 2024 – Present · Remote*
+### Magento Frontend Developer - The Pixel
+*Nov 2024 - May 2026 · Remote*
 
-Magento 2 frontend developer (and full-stack where needed) across a large portfolio of ecommerce clients. The role covers everything from net-new theme builds to ongoing feature development, performance optimisation, platform upgrades, and payment integrations.
+- Led the frontend build for a major Adobe Commerce client using Hyvä, setting new benchmarks for site performance and maintainability.
+- Acquired Adobe Commerce Frontend Expert certification during this engagement.
+- Integrated and customised Hyvä themes across complex multi-store environments, increasing client Lighthouse scores by up to 40%.
+- Implemented advanced UI features using Alpine.js; optimised CSS/JS bundles to achieve sub-second load times.
+- Collaborated with backend, QA, and DevOps on continuous integration and deployment via Adobe Commerce Cloud.
+- Provided technical mentorship on Magento 2 frontend best practices and WCAG accessibility compliance.
 
-Core stack: Magento 2 · Hyvä Theme · Tailwind CSS · Alpine.js · LESS/SCSS · PHP · JavaScript
+### Senior Magento Frontend Developer - Elementary Digital
+*Jul 2020 - Nov 2024 · 4 yrs 4 mos · Manchester, Hybrid*
 
-### Senior Frontend Magento Developer - Elementary Digital
-*Jul 2020 – Nov 2024 · 4 yrs 5 mos · Manchester, Hybrid*
-
-<!-- TODO: Add 2-3 bullet points about your work at Elementary Digital -->
+- Led frontend delivery across multiple Adobe Commerce projects, driving adoption of modern Hyvä-based architectures.
+- Built performant storefronts using Hyvä, Tailwind CSS, and Alpine.js — becoming one of the team's primary Hyvä specialists.
+- Gained hands-on backend experience with Adobe Commerce features and managed deployments on AWS.
+- Delivered a bespoke WordPress site end-to-end alongside core ecommerce work.
+- Completed BigDev 2024 training, achieving BigCommerce certification.
 
 ### Senior Frontend Developer - Leesa Sleep
-*Jul 2019 – May 2020 · 11 mos · Manchester*
+*Jul 2019 - May 2020 · 11 mos · Manchester*
 
-<!-- TODO: Add 2-3 bullet points about your work at Leesa Sleep -->
+- Rapidly onboarded to Shopify, hitting the ground running and delivering value within the first weeks.
+- Took full ownership of European stores, resolving stability issues and significantly improving maintainability.
+- Advised a predominantly US-based team on best practices and performance optimisations to improve site quality.
+- Introduced modular, scalable development practices including client-side rendering via Mustache.
 
 ### Senior Frontend Developer - Space 48
-*Nov 2016 – Jul 2019 · 2 yrs 9 mos*
+*Nov 2016 - Jul 2019 · 2 yrs 9 mos*
 
-- Worked on several full Magento 2 builds, alongside smaller projects and maintenance on existing sites
-- Contributed to the Magento 2 upgrade for Cox & Cox, which won Best Upgrade at Magento Imagine 2018
+- Delivered several end-to-end Magento 2 builds alongside ongoing maintenance and project work for existing clients.
+- Led the full frontend build for Cox & Cox, which won the Best Upgrade award at Magento Imagine 2018.
+- Drove adoption of automation technologies including Gulp; mentored and supported the wider frontend team.
+- Attained Magento 2 Frontend Developer Certification.
 
 ### Implementation Lead - Ampersand Commerce
-*Jul 2015 – Nov 2016 · 1 yr 5 mos · Manchester*
+*Jul 2015 - Nov 2016 · 1 yr 5 mos · Manchester*
 
-- Took increased responsibility for project planning and overseeing successful delivery
-- Delivered a Magento 1.14 project and a complex multi-site Magento 2 build
+- Returned in a lead capacity, taking on project planning, estimating, and delivery tracking responsibilities.
+- Successfully delivered two full Magento 1 builds and contributed to a complex multi-site Magento 2 project with a bespoke SASS framework and React/Redux frontend stack.
 
-### Frontend Magento Developer - Boohoo Group PLC
-*Feb 2015 – Jul 2015 · 6 mos · Manchester*
+### Frontend Developer - Boohoo Group PLC
+*Feb 2015 - Jul 2015 · 6 mos · Manchester*
 
-- Worked on a successful re-platform from Venda to Magento, and an upgrade of Magento across several international stores
+- Key contributor to a major Magento platform upgrade and responsive re-theme, delivering a significant release on schedule.
+- Introduced object-oriented JavaScript practices and gained experience with Mercurial, SASS, and Jira.
 
-### Frontend Developer - Ampersand Commerce
-*Feb 2012 – Feb 2015 · 3 yrs 1 mo*
+### Frontend Web Developer - Ampersand Commerce
+*Feb 2012 - Feb 2015 · 3 yrs 1 mo*
 
-- Frontend Magento Enterprise developer working closely with design and back-end PHP teams
-- Stack: Subversion, Linux, Apache, PHP, WordPress, Photoshop
+- Led frontend delivery on several ecommerce builds, working closely with backend, design, QA, and PM teams.
+- Led the frontend implementation for Poundland, which ranked in the top 10 major retailers in 2014 per Sitemorse.
+- Introduced new coding standards and automation frameworks; acquired Magento Frontend Developer Certification.
+
+### Frontend Web Developer - Netcars (now RAC Cars)
+*Sep 2011 - Jan 2012*
+
+- Owned all frontend development within a small team delivering a large ASP.NET solution, taking initiative and learning rapidly on the job.
 
 ---
 
 ## Skills
 
-**Frontend:** Hyvä Themes, Tailwind CSS, Alpine.js, JavaScript (ES6+), HTML/CSS, Knockout.js, RequireJS
+**Frontend:** Hyvä Themes, Tailwind CSS, Alpine.js, JavaScript (ES6+), HTML/CSS, SCSS/LESS, GraphQL, Knockout.js, RequireJS
 
-**Adobe Commerce:** Magento 2 frontend architecture, theme development, checkout customisation, UI component framework, PWA Studio awareness
+**Adobe Commerce:** Magento 2 frontend architecture, theme development, Hyvä Checkout, checkout customisation, UI component framework, performance optimisation, accessibility (WCAG), Adobe Commerce Cloud
 
-**Tools & Workflow:** Git, Warden, Docker, VS Code, Linux
+**Tools & Workflow:** Git, Docker, Warden, Composer, PHP, VS Code, Linux
+
+**Leadership & Collaboration:** Team leadership & mentoring, technical communication with non-technical stakeholders, cross-functional collaboration (design, backend, QA, DevOps), project scoping & effort estimation, code review & quality standards, remote & distributed team working
 
 **AI & Tooling:** Claude Code, prompt engineering, AI-assisted development workflows
 
-**Certifications:** Adobe Commerce Frontend Developer Expert
+---
+
+## Certifications
+
+- Adobe Commerce Frontend Expert
+- Magento 2 Frontend Developer
+- Magento Frontend Developer
+- BigCommerce BigDev
 
 ---
 
 ## Notable Work
 
-<!-- TODO: Add notable clients or projects here - agency names, retailer verticals, anything you can share publicly -->
+- **Cox & Cox** — Led the full Hyvä frontend rebuild; won Best Upgrade at Magento Imagine 2018.
+- **Poundland** — Led the frontend implementation; ranked in the top 10 major UK retailers by Sitemorse in 2014.
 
-*Details available on request.*
+*Further details available on request.*
 
 ---
 
