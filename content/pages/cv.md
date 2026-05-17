@@ -26,7 +26,7 @@ I'm based in Manchester and work remotely. Currently available for contract enga
 *Nov 2024 - May 2026 · Remote*
 
 - Led the frontend build for a major Adobe Commerce client using Hyvä, setting new benchmarks for site performance and maintainability.
-- Acquired Adobe Commerce Frontend Expert certification during this engagement.
+- Acquired Adobe Commerce Frontend Expert certification.
 - Integrated and customised Hyvä themes across complex multi-store environments, increasing client Lighthouse scores by up to 40%.
 - Implemented advanced UI features using Alpine.js; optimised CSS/JS bundles to achieve sub-second load times.
 - Collaborated with backend, QA, and DevOps on continuous integration and deployment via Adobe Commerce Cloud.
@@ -73,7 +73,8 @@ I'm based in Manchester and work remotely. Currently available for contract enga
 *Feb 2012 - Feb 2015 · 3 yrs 1 mo*
 
 - Led frontend delivery on several ecommerce builds, working closely with backend, design, QA, and PM teams.
-- Led the frontend implementation for Poundland, which ranked in the top 10 major retailers in 2014 per Sitemorse.
+- Led the frontend implementation for Poundland, which subsequently ranked in the top 10 major retailers in 2014 per Sitemorse.
+- Developed full bespoke checkout experience for Magento 1 using BackboneJS
 - Introduced new coding standards and automation frameworks; acquired Magento Frontend Developer Certification.
 
 ### Frontend Web Developer - Netcars (now RAC Cars)
