@@ -19,6 +19,11 @@
             <%- icons.twitter || '' %>
           </a>
           <% } %>
+          <% if (config.socialLinks.instagram) { %>
+          <a href="<%= config.socialLinks.instagram %>" target="_blank" rel="noopener noreferrer" class="text-foreground-subtle hover:text-primary-400 transition-colors" aria-label="Instagram">
+            <%- icons.instagram || '' %>
+          </a>
+          <% } %>
           <% if (config.socialLinks.medium) { %>
           <a href="<%= config.socialLinks.medium %>" target="_blank" rel="noopener noreferrer" class="text-foreground-subtle hover:text-primary-400 transition-colors" aria-label="Medium">
             <%- icons.medium || '' %>

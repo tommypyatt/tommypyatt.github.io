@@ -39,7 +39,8 @@ export default {
   socialLinks: {
     linkedin: "https://uk.linkedin.com/in/tommy-pyatt-69a78461",
     github: "https://github.com/tommypyatt",
-    twitter: "https://twitter.com/tommy_pyatt",
+    twitter: null,
+    instagram: "https://www.instagram.com/tommypyatt",
     medium: "https://medium.com/@tommypyatt",
     // Email is obfuscated in the page - use base64 encoded value
     // To encode: btoa("your@email.com") in browser console
