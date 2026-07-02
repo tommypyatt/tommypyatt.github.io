@@ -22,6 +22,12 @@ I'm based in Manchester and work remotely. Currently available for contract enga
 
 ## Experience
 
+### Founder / Independent
+*Jun 2026 - Present · Remote*
+
+- Founding and building an independent product venture outside the Magento/Adobe Commerce space.
+- Alongside this, available for Adobe Commerce & Hyvä contract work, 3-4 days/week.
+
 ### Magento Frontend Developer - The Pixel
 *Nov 2024 - May 2026 · Remote*
 
